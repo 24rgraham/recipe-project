@@ -1,20 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lilita+One&family=Sacramento&family=Silkscreen&display=swap" rel="stylesheet')
 
-main{
-    margin: 20px;
-    padding: 0;
-    box-sizing: border-box;
-}
-    
-    
-.columns{
-    
-    padding:20px;
-    background-color: rgb(248, 242, 228);
-    color: black;
-    height: 1000px;;
- 
-}
 
 .navbar{
     height: 20px;
@@ -22,17 +7,20 @@ main{
 
 
 .container{
-min-height: 100vh;
+background: rgb(245, 238, 197);
+margin: auto;
 }
 
+
 .meal-wrapper{
-    padding: 20px;
+  
     margin:auto
     text-align: center;
     
 
 .meal-search-box{
     display: flex;
+    
 }
 
 .meal-item{
@@ -46,8 +34,18 @@ min-height: 100vh;
 }
 .meal-name h3{
     font-size: 1.5rem;
+    .meal-result
 }
 
+#search-input{
+    padding-bottom: 10px;
+    
+}
+
+#search-btn{
+    padding-bottom: 10px;
+    
+}
 
 h1{
     font-size: 5rem;
@@ -56,12 +54,13 @@ h1{
 .title{
     color: black;
     font: size 5rem;
-    margin-top: 10px;
+    margin-top: 0;
     padding: auto;
    
-    border: radius 2px; ;
+
        
 }
+
 
 p{
     font-size: 1.5rem;
@@ -95,11 +94,17 @@ p{
 .footer{
     background-color:black;
     color: rgb(252, 186, 46);
-
+   
 }
 
 .footer p{
     color: rgb(252, 186, 46);
     font: 150;
+    text-align: center;
 }
-
+@media screen and {min: width 600px;){
+    .meal-search-box{
+        width: 540px:border: margin-left:auto;
+        margin-right:auto;
+    }    
+}

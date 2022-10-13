@@ -44,24 +44,25 @@
       </nav>
 
     <main>
-        <div class="columns">
+        
             <!--Column -1 This is where the recipe name and img go.-->
-            <div class="column-1 is-half">
-                <div class="container">
+            <img src="https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/a6dcda39a68d47aba0c0e655c35919da.jpeg" alt="Pineapple Pancetta Pasta" id="hero-img">
+                <div class="container" style="border: 5mm ridge rgba(246, 148, 44, 0.6)">
                     <div class="meal-wrapper">
                         <div class="meal-search">
                             <h1 class="title">Recipe of the Day!</h1>
                             <div class="meal-search-box">
-                                <input type="submit-text" class="input is-medium is-black" placeholder="Enter an ingredient" id="search-input">
+                                <input type="submit-text" class="input is-medium is-black is-rounded" placeholder="Enter an ingredient" id="search-input">
                                 <button type="Search" class="button is-outlined is-black is-rounded" id="search-btn">Search</button>
+                               
                             </div>
                             <div class="meal-result">
-                                <h2 class="subtitle">Today's Recipe is</h2>
+                                <h2 class="subtitle">Today's Recipe is <span> </span></h2>
     
                                 <div id="meal idea">
                                     <div class="meal-item">
                                         <div class="meal-img">
-                                            <img src="" alt="selected-meal">
+                                            <img><img src="" alt="">
                                         </div>
                                         <div class="meal-name">
                                             <h3>meal here</h3>
@@ -74,11 +75,11 @@
                         </div>  
                     </div>
                 </div>
-            </div>
             
-
+            
+            
             <!--Column-2 This is where ingredients go -->
-            <div class="column-2"> Column-2 HERE
+            <div class="container" style="border: 3mm ridge rgba(246, 148, 44, 0.6)"> <b>Ingredients and Preparation: </b>  
                 <div class="meal-details-content"></div>
                  <button type="button" class="button is-black is-rounded recipe-close" id="recipe-close-btn"></button>
                     <h3>ingredient List</h3>
@@ -86,30 +87,34 @@
                         <ul class="ingredients"></ul>
             </div>
 
-                        
+                    
             <!--Column-3 This is where Google Plcaes go-->
-            <div class="column-3">  Column-3 HERE
+            <div class="container" style="border: 3mm ridge rgba(246, 148, 44, 0.6)"> <b>Store Locator</b>
                 <h3>Store Locator</h3>
                 <h4>We can help you find the stores near you.</h4>
             </div>
             <div class="meal-details">
-                position:fixed;
+                
                 
             </div>
 
-        </div>       
+          
                       
     </main>            
-           
-    
-     <footer class="footer">
-        <div class="content has-text-centered">
+      <hr>     
+     <!--Do we want to insert our GitHub repo here in the footer?-->
+    <footer class="footer">
+        <div class="content has-text-centered is-black">
           <p>
-            <!--Do we want to insert our GitHub repo here in the footer?-->
-            Recipe of the Day! by <a href="GitHub repo???">Team 3 (Awesome members: Darryl, Machiko, Pooja, & Ryan)</a>. 
+            <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            Recipe of the Day! by
           </p>
         </div>
-      </footer>            
+      </footer> 
+    
+           
 
  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>    
  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
