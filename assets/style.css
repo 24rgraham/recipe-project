@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lilita+One&family=Sacramento&family=Silkscreen&display=swap" rel="stylesheet')
+
+main{
+    margin: 20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+    
+    
+.columns{
+    
+    padding:20px;
+    background-color: rgb(248, 242, 228);
+    color: black;
+    height: 1000px;;
+ 
+}
+
+.navbar{
+    height: 20px;
+}
+
+
+.container{
+min-height: 100vh;
+}
+
+.meal-wrapper{
+    padding: 20px;
+    margin:auto
+    text-align: center;
+    
+
+.meal-search-box{
+    display: flex;
+}
+
+.meal-item{
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px -15px; 
+}
+
+.meal-img{
+    width: 100%;
+    display: block;
+}
+.meal-name h3{
+    font-size: 1.5rem;
+}
+
+
+h1{
+    font-size: 5rem;
+}
+
+.title{
+    color: black;
+    font: size 5rem;
+    margin-top: 10px;
+    padding: auto;
+   
+    border: radius 2px; ;
+       
+}
+
+p{
+    font-size: 1.5rem;
+    color: black;
+}
+
+.ingredients{
+    font: 1.5rem;
+
+}
+
+.nutrition-box{
+    color: black;
+    font-size: 1rem;
+}
+
+.food-category{
+    color: black;
+    font-size: 1rem;
+    
+}
+
+.button{
+    margin: 20px 20px;
+    font-size: 1.5rem;
+    
+
+}
+
+
+.footer{
+    background-color:black;
+    color: rgb(252, 186, 46);
+
+}
+
+.footer p{
+    color: rgb(252, 186, 46);
+    font: 150;
+}
+
