@@ -83,16 +83,19 @@ function fetchRandomRecipe() {
         recipeImageDivEl.appendChild(recipeImageEl);
 
         description = data.results[0].description;
+        console.log("des-" + description);
+        recipedetailDivEl.textContent = description;
     })
 	.catch(err => console.error(err));
 }
 
-function handleButtonEvent(event) {
-    event.preventDefault();
-    console.log("des" + description);
-    recipedetailDivEl.textContent = description;
-}
+// function handleButtonEvent(event) {
+//     event.preventDefault();
+//     console.log("des-" + description);
+//     recipedetailDivEl.textContent = description;
+// }
 
 
 fetchRandomRecipe();
-buttonEl.addEventListener('click', handleButtonEvent);
+
+// buttonEl.addEventListener('click', handleButtonEvent);
