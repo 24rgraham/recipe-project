@@ -5,3 +5,22 @@
 .recipeImage {
     width: 500px;
 }
+
+.recipeName {
+    font-weight: bold;
+}
+
+.recipeDescription {
+    background-color: lightgrey;
+    margin: 5px
+}
+
+.recipeInstructionsDiv {
+    background-color: lightgrey;
+    margin: 5px
+}
+
+.recipeIngredientsDiv {
+    background-color: lightgrey;
+    margin: 5px
+}
