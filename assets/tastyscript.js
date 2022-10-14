@@ -73,7 +73,7 @@ function printRecipeDescription() {
         }
         
         recipeDescriptionEl.appendChild(description);
-    }
+    } else { console.log('no description'); handleNextRecipeButtonEvent();}
 }
 
 function getRecipeInstructions() {
@@ -87,7 +87,8 @@ function getRecipeInstructions() {
 }
 
 function printRecipeInstructions() {
-    document.getElementById('moreInfo').style.display = 'block'
+    document.getElementById('moreInfo').style.display = 'block';
+    moreInfoButtonEl.style.display = 'none';
     console.log("Instructions");
     let instructionsHeading = document.createElement("h2");
     instructionsHeading.textContent = "Instructions:";
@@ -95,9 +96,10 @@ function printRecipeInstructions() {
 
     for (i=0; i<globalInstructions.length; i++) {
         if (globalInstructions[i]) {
+            var j = i+1;
             console.log(globalInstructions[i]);
             let instruction = document.createElement("p");
-            instruction.textContent = globalInstructions[i];
+            instruction.textContent = j + '. ' + globalInstructions[i];
             recipeInstructionsEl.appendChild(instruction);
         }
     }
@@ -125,7 +127,7 @@ function printRecipeIngredients(ingredients) {
         if (globalIngredients[i]) {
             console.log(globalIngredients[i]);
             let ingredient = document.createElement("p");
-            ingredient.textContent = globalIngredients[i];
+            ingredient.textContent = '- ' + globalIngredients[i];
             recipeIngredientsEl.appendChild(ingredient);
         }
     }
@@ -167,6 +169,8 @@ function handleMoreInfoButtonEvent() {
 }
 
 function handleNextRecipeButtonEvent() {
+    moreInfoButtonEl.style.display = 'inline';
+    document.getElementById('moreInfo').style.display = 'none';
     console.log("In handleNextRecipeButtonEvent");
     clearElements();
     loadRecipe();
