@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lilita+One&family=Sacramento&family=Silkscreen&display=swap" rel="stylesheet')
 
 
-.navbar{
-    height: 20px;
+.navbar {
+    height: 20px
 }
 
 
@@ -11,13 +11,18 @@ background: rgb(245, 238, 197);
 margin: auto;
 }
 
+/* this controles the size of the map */
+.container-box1 {
+width: 1400px;
+height: 400px;
+}
 
 .meal-wrapper{
   
-    margin:auto
+    margin:auto;
     text-align: center;
     
-
+}
 .meal-search-box{
     display: flex;
     
@@ -33,8 +38,9 @@ margin: auto;
     display: block;
 }
 .meal-name h3{
-    font-size: 1.5rem;
-    .meal-result
+    font-size: 1.5rem;}
+
+    .meal-result{
 }
 
 #search-input{
@@ -50,15 +56,14 @@ margin: auto;
 h1{
     font-size: 5rem;
 }
-
+h4{
+    justify-content: center;
+}
 .title{
     color: black;
     font: size 5rem;
     margin-top: 0;
     padding: auto;
-   
-
-       
 }
 
 
@@ -102,9 +107,16 @@ p{
     font: 150;
     text-align: center;
 }
-@media screen and {min: width 600px;){
+
+@media screen and (min-width: 600px){
     .meal-search-box{
-        width: 540px:border: margin-left:auto;
+        width: 540px;
+        border: 2px;
+        margin-left:auto;
         margin-right:auto;
     }    
+}
+
+#moreInfo {
+    display: none;
 }
