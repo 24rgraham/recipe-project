@@ -20,7 +20,7 @@
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io"> <!--http://bulma.io...Link to our GitHub repo here?-->
-            <img src="./favicon/Spaghetti-32x32.png" alt="silverware with a plate" width="112" height="28">
+            <img src="./favicon/Spaghetti-32x32.png" alt="silverware with a plate" width="50" height="50">
           </a>
             
         </div>
@@ -57,17 +57,17 @@
                                
                             </div> -->
                             <div class="meal-result">
-                                <h2 class="todayrecipe">Today's Recipe is <span> </span></h2>
+                                <h2 class="recipeName">Today's Recipe is <span> </span></h2>
     
                                 <div id="meal idea">
                                     <div class="meal-item">
-                                        <div class="recipeDiv">
+                                        <div class="recipeImageDiv">
                                             <img><img src="" alt="">
                                         </div>
                                         <div>
-                                            <h3 class="recipedetail">meal here</h3>
-                                            <button class="buttonThis is-black is-rounded">I want this recipe!</button>
-                                            <button class="button is-black is-rounded">More recipe</button> 
+                                            <h3 class="recipeDescription">meal here</h3>
+                                            <button class="button is-black is-rounded" id="moreInfoButton">I want this recipe!</button>
+                                            <button class="button is-black is-rounded" id="nextRecipeButton">Give me another!</button> 
                                         </div>                
                                     </div>
                                 </div>
@@ -79,11 +79,16 @@
             
             
             <!--Column-2 This is where ingredients go -->
-            <div class="container" style="border: 3mm ridge rgba(246, 148, 44, 0.6)"> <b>Ingredients and Preparation: </b>  
+            <div class="container" id="moreInfo" style="border: 3mm ridge rgba(246, 148, 44, 0.6)"> <b>Ingredients and Preparation: </b>  
                 <div class="meal-details-content"></div>
-                 <button type="button" class="button is-black is-rounded recipe-close" id="recipe-close-btn"></button>
                     <h3>ingredient List</h3>
+                    <div class="recipeIngredientsDiv">
+
+                    </div>
                     <h4>These are what we need to make the meal.</h4>
+                    <div class="recipeInstructionsDiv">
+
+                    </div>
                         <ul class="ingredients"></ul>
             </div>
 
@@ -249,7 +254,7 @@
  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>    
  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
  <!-- <script src="text-processing.js"></script> -->
-  <script src="./assets/script.js"></script> 
+  <script src="./assets/tastyscript.js"></script> 
     
 </body>
 geometry&solution_channel=GMP_QB_neighborhooddiscovery_v2_cADF" async defer></script>

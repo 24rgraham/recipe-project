@@ -116,3 +116,7 @@ p{
         margin-right:auto;
     }    
 }
+
+#moreInfo {
+    display: none;
+}
