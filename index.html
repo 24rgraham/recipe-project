@@ -11,7 +11,11 @@
     <!-- <link rel="manifest" href="/site.webmanifest"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lilita+One&family=Sacramento&family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Lily+Script+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
     <title> Recipe of the Day!</title>
 </head>
@@ -19,7 +23,7 @@
 <body>
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io"> <!--http://bulma.io...Link to our GitHub repo here?-->
+          <!-- MC - break the link to Bulma <a class="navbar-item" href="https://bulma.io">  -->
             <img src="./favicon/Spaghetti-32x32.png" alt="silverware with a plate" width="50" height="50">
           </a>
             
@@ -31,12 +35,12 @@
               Home
             </a>
       
-            <a class="navbar-item">
+            <a class="navbar-item" href="https://github.com/24rgraham/recipe-project" >
               GitHub 
             </a>
       
             <a class="navbar-item">
-              About us
+              
             </a>
             </div>
           </div>
@@ -50,14 +54,14 @@
                 <div class="container" style="border: 5mm ridge rgba(246, 148, 44, 0.6)">
                     <div class="meal-wrapper">
                         <div class="meal-search">
-                            <h1 class="title">Recipe of the Day!</h1>
+                            <h1 class="title is-size-1" style="font-family:Lilita One, cursive">Recipe of the Day!</h1>
                             <!-- <div class="meal-search-box">
                                 <input type="submit-text" class="input is-medium is-black is-rounded" placeholder="Enter an ingredient" id="search-input">
                                 <button type="Search" class="button is-outlined is-black is-rounded" id="search-btn">Search</button>
                                
                             </div> -->
                             <div class="meal-result">
-                                <h2 class="recipeName">Today's Recipe is <span> </span></h2>
+                                <h2 class="recipeName is-size-3"></h2>
     
                                 <div id="meal idea">
                                     <div class="meal-item">
@@ -65,10 +69,13 @@
                                             <img><img src="" alt="">
                                         </div>
                                         <div>
-                                            <h3 class="recipeDescription">meal here</h3>
+                                            <h3 class="recipeDescription"></h3>
                                             <button class="button is-black is-rounded" id="moreInfoButton">I want this recipe!</button>
                                             <button class="button is-black is-rounded" id="nextRecipeButton">Give me another!</button> 
-                                        </div>                
+                                        </div>  
+                                        <div class="display-label">
+                                        
+                                        </div>              
                                     </div>
                                 </div>
                             </div>
@@ -79,13 +86,13 @@
             
             
             <!--Column-2 This is where ingredients go -->
-            <div class="container" id="moreInfo" style="border: 3mm ridge rgba(246, 148, 44, 0.6)"> <b>Ingredients and Preparation: </b>  
+            <div class="container" id="moreInfo" style="border: 5mm ridge rgba(246, 148, 44, 0.6)">   
                 <div class="meal-details-content"></div>
-                    <h3>ingredient List</h3>
+                    <!-- <h3>ingredient List</h3> -->
                     <div class="recipeIngredientsDiv">
 
                     </div>
-                    <h4>These are what we need to make the meal.</h4>
+                    <!-- <h4>These are what we need to make the meal.</h4> -->
                     <div class="recipeInstructionsDiv">
 
                     </div>
@@ -94,9 +101,8 @@
 
                     
             <!--Column-3 This is where Google Plcaes go-->
-            <h3>Store Locator</h3><b>Store Locator</b>
             <!--  container box is the adjustment i made to make the container big enopugh to fit the map i also took the store locator and we can help you find a store outside of the container -->
-            <div  class="container container-box1" style="border: 3mm ridge rgba(246, 148, 44, 0.6)"> 
+            <div  class="container" style="border: 5mm ridge rgba(246, 148, 44, 0.6)"> 
                 
                 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
@@ -232,19 +238,17 @@
                 
                 
             </div>
-<h4>We can help you find the stores near you.</h4>
           
                       
     </main>            
-      <hr>     
+         
      <!--Do we want to insert our GitHub repo here in the footer?-->
     <footer class="footer">
         <div class="content has-text-centered is-black">
           <p>
-            <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-            Recipe of the Day! by
+            Recipe of the Day! by Team 3
+            
+            
           </p>
         </div>
       </footer> 

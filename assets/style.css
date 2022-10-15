@@ -1,10 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lilita+One&family=Sacramento&family=Silkscreen&display=swap" rel="stylesheet')
+/* @import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Lily+Script+One&display=swap" rel="stylesheet");
 
+font-family: 'Dancing Script', cursive; */
+/* font-family: 'Lilita One', cursive;
+font-family: 'Silkscreen', cursive; */
 
 .navbar {
     height: 20px
 }
-
+body{
+    background-color:rgb(235, 114, 23)
+}
 
 .container{
 background: rgb(245, 238, 197);
@@ -34,14 +39,14 @@ height: 400px;
 }
 
 .meal-img{
-    width: 100%;
+    max-width: 100%;
+    max-height: auto;
     display: block;
 }
 .meal-name h3{
     font-size: 1.5rem;}
 
-    .meal-result{
-}
+
 
 #search-input{
     padding-bottom: 10px;
@@ -55,6 +60,15 @@ height: 400px;
 
 h1{
     font-size: 5rem;
+}
+
+
+h2.recipeName{
+font-weight: bold;
+font-size: 100%;
+padding:10px;
+
+
 }
 h4{
     justify-content: center;
@@ -70,8 +84,13 @@ h4{
 p{
     font-size: 1.5rem;
     color: black;
+    text-align: start;
+    padding-left: 10px;
 }
 
+.recipeIngredientsDiv h2{
+    font-size: 1.5rem;
+}
 .ingredients{
     font: 1.5rem;
 
@@ -119,4 +138,5 @@ p{
 
 #moreInfo {
     display: none;
+    padding-inline-start: 30px;
 }

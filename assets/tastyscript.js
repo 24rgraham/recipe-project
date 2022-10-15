@@ -6,6 +6,7 @@ var recipeDescriptionEl = document.querySelector(".recipeDescription");
 var recipeInstructionsEl = document.querySelector(".recipeInstructionsDiv");
 var recipeIngredientsEl = document.querySelector(".recipeIngredientsDiv");
 
+
 const options = {
     method: 'GET',
     headers: {
@@ -20,6 +21,7 @@ var globalTopDescription;
 var globalInstructions = [];
 var globalIngredients = [];
 
+
 function getRandomRecipe() {
     var recipeNumber = Math.floor(Math.random() * 100)
     var url = "https://tasty.p.rapidapi.com/recipes/list?from=" + recipeNumber + "&size=1";
@@ -27,6 +29,7 @@ function getRandomRecipe() {
     return fetch(url, options)
     .then(response => response.json())
     .then(function (data) {
+        console.log(data)
         console.log(data.results[0]);
         return data.results[0];
     });
@@ -50,6 +53,7 @@ function printRecipeImage(image_url) {
     let recipeImageEl = document.createElement("img");
     recipeImageEl.src = image_url;
     recipeImageEl.className = "recipeImage";
+    recipeImageEl.setAttribute('width', '800px')
     recipeImageDivEl.appendChild(recipeImageEl);
 }
 
@@ -62,7 +66,7 @@ function printRecipeDescription() {
     if (globalDescription || globalTopDescription) {
         //recipeDescriptionEl.innerHTML = "<p>Description</p>" + "<p>" + globalDescription + "</p>";
         let descriptionHeading = document.createElement("h2");
-        descriptionHeading.textContent = "Description:";
+        descriptionHeading.textContent = "Description of this recipe:";
         recipeDescriptionEl.appendChild(descriptionHeading);
 
         let description = document.createElement("p");
