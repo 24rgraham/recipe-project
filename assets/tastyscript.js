@@ -10,7 +10,7 @@ var recipeIngredientsEl = document.querySelector(".recipeIngredientsDiv");
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'da4c2a888amshc0a3faa09c1e7b5p15d91djsn6bdd906fb36b',
+        'X-RapidAPI-Key': '6cf937361amsh9b432836823a324p17b612jsn8c93f55895ec',
         'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
     }
 };
@@ -65,9 +65,9 @@ function printRecipeDescription() {
     console.log("Description: " + globalTopDescription + " " + globalDescription);
     if (globalDescription || globalTopDescription) {
         //recipeDescriptionEl.innerHTML = "<p>Description</p>" + "<p>" + globalDescription + "</p>";
-        let descriptionHeading = document.createElement("h2");
-        descriptionHeading.textContent = "Description of this recipe:";
-        recipeDescriptionEl.appendChild(descriptionHeading);
+        // let descriptionHeading = document.createElement("h2");
+        // descriptionHeading.textContent = "Description of this recipe:";
+        // recipeDescriptionEl.appendChild(descriptionHeading);
 
         let description = document.createElement("p");
         if (globalDescription) {
@@ -96,6 +96,7 @@ function printRecipeInstructions() {
     console.log("Instructions");
     let instructionsHeading = document.createElement("h2");
     instructionsHeading.textContent = "Instructions:";
+    instructionsHeading.setAttribute('class', 'is-size-3');
     recipeInstructionsEl.appendChild(instructionsHeading);
 
     for (i=0; i<globalInstructions.length; i++) {
@@ -103,7 +104,7 @@ function printRecipeInstructions() {
             var j = i+1;
             console.log(globalInstructions[i]);
             let instruction = document.createElement("p");
-            instruction.innerHTML = j + '. ' + globalInstructions[i] + ' <br /> <br /> ';
+            instruction.innerHTML = j + '. ' + globalInstructions[i] + ' <br />';
             recipeInstructionsEl.appendChild(instruction);
         }
     }
@@ -125,6 +126,7 @@ function printRecipeIngredients(ingredients) {
     console.log("Ingredients");
     let ingredientHeading = document.createElement("h2");
     ingredientHeading.textContent = "Ingredients:";
+    ingredientHeading.setAttribute('class', 'is-size-3');
     recipeIngredientsEl.appendChild(ingredientHeading);
 
     for (i=0; i<globalIngredients.length; i++) {
