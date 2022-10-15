@@ -1,9 +1,6 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Lily+Script+One&display=swap" rel="stylesheet");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Lily+Script+One&display=swap" rel="stylesheet");
 
-font-family: 'Dancing Script', cursive; */
-/* font-family: 'Lilita One', cursive;
-font-family: 'Silkscreen', cursive; */
-
+ 
 .navbar {
     height: 20px
 }
@@ -13,8 +10,8 @@ body{
 
 .container{
 background: rgb(245, 238, 197);
-margin: auto;
-}
+margin: auto; 
+} 
 
 /* this controles the size of the map */
 .container-box1 {
@@ -32,6 +29,7 @@ height: 400px;
     display: flex;
     
 }
+
 
 .meal-item{
     border-radius: 1rem;
@@ -69,6 +67,7 @@ font-size: 100%;
 padding:10px;
 
 
+
 }
 h4{
     justify-content: center;
@@ -88,9 +87,45 @@ p{
     padding-left: 10px;
 }
 
-.recipeIngredientsDiv h2{
-    font-size: 1.5rem;
+.recipeInstructionsDiv{
+    padding-bottom: ;
 }
+
+.recipeIngredientsDiv h2{
+    font-size: 1.75rem;
+    font-weight: bolder;
+}
+
+.recipeIngredientsDiv p{
+    font-size: 1.5rem;
+    padding-left: 60px;
+}
+
+.recipeInstructionsDiv h2{
+    font-size: 1.75rem;
+    font-weight: bolder;
+    padding-top: 20px;
+}
+
+.recipeInstructionsDiv p{
+    font-size: 1.5rem;
+    padding-left: 60px;
+    padding-right: 20px;
+    
+}
+
+.recipeDescription h2{
+    font-size: 2rem;
+    font-weight: 200;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-weight: bolder;
+}
+
+.recipeDescription p{
+    padding
+}
+
 .ingredients{
     font: 1.5rem;
 
