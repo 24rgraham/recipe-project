@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png"> -->
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png"> -->
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Lily+Script+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title> Recipe of the Day!</title>
+</head>
+
+<body>
+    <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <!-- MC - break the link to Bulma <a class="navbar-item" href="https://bulma.io">  -->
+            <img src="./favicon/Spaghetti-32x32.png" alt="silverware with a plate" width="50" height="50">
+          </a>
+            
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              Home
+            </a>
+      
+            <a class="navbar-item" href="https://github.com/24rgraham/recipe-project" >
+              GitHub 
+            </a>
+      
+            <a class="navbar-item">
+              
+            </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <main>
+        
+            <!--Column -1 This is where the recipe name and img go.-->
+            <!-- <img src="https://img.buzzfeed.com/tasty-app-user-assets-prod-us-east-1/recipes/a6dcda39a68d47aba0c0e655c35919da.jpeg" alt="Pineapple Pancetta Pasta" id="hero-img"> -->
+                <div class="container" style="border: 5mm ridge rgba(246, 148, 44, 0.6)">
+                    <div class="meal-wrapper">
+                        <div class="meal-search">
+                            <h1 class="title is-size-1" style="font-family:Lilita One, cursive">Recipe of the Day!</h1>
+                            <!-- <div class="meal-search-box">
+                                <input type="submit-text" class="input is-medium is-black is-rounded" placeholder="Enter an ingredient" id="search-input">
+                                <button type="Search" class="button is-outlined is-black is-rounded" id="search-btn">Search</button>
+                               
+                            </div> -->
+                            <div class="meal-result">
+                                <h2 class="recipeName is-size-3"></h2>
+    
+                                <div id="meal idea">
+                                    <div class="meal-item">
+                                        <div class="recipeImageDiv">
+                                            <img><img src="" alt="">
+                                        </div>
+                                        <div>
+                                            <h3 class="recipeDescription"></h3>
+                                            <button class="button is-black is-rounded" id="moreInfoButton">I want this recipe!</button>
+                                            <button class="button is-black is-rounded" id="nextRecipeButton">Give me another!</button> 
+                                        </div>  
+                                        <div class="display-label">
+                                        
+                                        </div>              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            
+            
+            
+            <!--Column-2 This is where ingredients go -->
+            <div class="container" id="moreInfo" style="border: 5mm ridge rgba(246, 148, 44, 0.6)">   
+                <div class="meal-details-content"></div>
+                    <!-- <h3>ingredient List</h3> -->
+                    <div class="recipeIngredientsDiv">
+
+                    </div>
+                    <!-- <h4>These are what we need to make the meal.</h4> -->
+                    <div class="recipeInstructionsDiv">
+
+                    </div>
+                        <ul class="ingredients"></ul>
+            </div>
+
+                    
+            <!--Column-3 This is where Google Plcaes go-->
+            <!--  container box is the adjustment i made to make the container big enopugh to fit the map i also took the store locator and we can help you find a store outside of the container -->
+            <div  class="container" style="border: 5mm ridge rgba(246, 148, 44, 0.6)"> 
+                
+                <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="./Places.css"></link>
+  
+    <script id="nd-place-results-tmpl" type="text/x-handlebars-template">
+      {{#each places}}
+    <!-- map-size changed the ability of the map to scale down-->
+        <li class="place-result" id="map-size">
+          <div class="text">
+            <button class="name">{{name}}</button>
+            <div class="info">{{type}}</div>
+          </div>
+          <button class="photo" style="background-image:url({{photos.0.urlSmall}})" aria-label="show photo in viewer"></button>
+        </li>
+      {{/each}}
+    </script>
+    <script id="nd-place-details-tmpl" type="text/x-handlebars-template">
+      <div class="navbar">
+        <button class="back-button">
+          <img class="icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/arrow_back/v11/24px.svg" alt="back"/>
+          Back
+        </button>
+      </div>
+      <header>
+        <h2>{{name}}</h2>
+        <div class="info">
+          <a href="{{url}}" target="_blank">See on Google Maps</a>
+        </div>
+        {{#if type}}
+          <div class="info">{{type}}</div>
+        {{/if}}
+      </header>
+      <div class="section">
+        {{#if address}}
+          <div class="contact">
+            <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v10/24px.svg" alt="Address" class="icon"/>
+            <div class="text">
+              {{address}}
+            </div>
+          </div>
+        {{/if}}
+        {{#if website}}
+          <div class="contact">
+            <img src="https://fonts.gstatic.com/s/i/googlematerialicons/public/v10/24px.svg" alt="Website" class="icon"/>
+            <div class="text">
+              <a href="{{website}}" target="_blank">{{websiteDomain}}</a>
+            </div>
+          </div>
+        {{/if}}
+        {{#if phoneNumber}}
+          <div class="contact">
+            <img src="https://fonts.gstatic.com/s/i/googlematerialicons/phone/v10/24px.svg" alt="Phone number" class="icon"/>
+            <div class="text">
+              {{phoneNumber}}
+            </div>
+          </div>
+        {{/if}}
+        {{#if openingHours}}
+          <div class="contact">
+            <img src="https://fonts.gstatic.com/s/i/googlematerialicons/schedule/v12/24px.svg" alt="Opening hours" class="icon"/>
+            <div class="text">
+              {{#each openingHours}}
+                <div>
+                  <span class="weekday">{{days}}</span>
+                  <span class="hours">{{hours}}</span>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        {{/if}}
+      </div>
+      {{#if photos}}
+        <div class="photos section">
+          {{#each photos}}
+            <button class="photo" style="background-image:url({{urlLarge}})" aria-label="show photo in viewer"></button>
+          {{/each}}
+        </div>
+      {{/if}}
+      {{#if html_attributions}}
+        <div class="section">
+          {{#each html_attributions}}
+            <p class="attribution">{{{this}}}</p>
+          {{/each}}
+        </div>
+      {{/if}}
+    </script>
+  </head>
+  <body>
+    <div class="neighborhood-discovery">
+      <div class="places-panel panel no-scroll">
+        <header class="navbar">
+          <div class="search-input">
+            <input class="place-search-input" placeholder="Search nearby places">
+            <button class="place-search-button">
+              <img src="https://fonts.gstatic.com/s/i/googlematerialicons/search/v11/24px.svg" alt="search"/>
+            </button>
+          </div>
+        </header>
+        <div class="results">
+          <ul class="place-results-list"></ul>
+        </div>
+        <button class="show-more-button sticky">
+          <span>Show More</span>
+          <img class="right" src="https://fonts.gstatic.com/s/i/googlematerialicons/expand_more/v11/24px.svg" alt="expand"/>
+        </button>
+      </div>
+      <div class="details-panel panel"></div>
+      <div class="map"></div>
+      <div class="photo-modal">
+        <img alt="place photo"/>
+        <div>
+          <button class="back-button">
+            <img class="icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/arrow_back/v11/24px.svg" alt="back"/>
+          </button>
+          <div class="photo-text">
+            <div class="photo-place"></div>
+            <div class="photo-attrs">Photo by <span></span></div>
+          </div>
+        </div>
+      </div>
+      <svg class="marker-pin" xmlns="http://www.w3.org/2000/svg" width="26" height="38" fill="none">
+        <path d="M13 0C5.817 0 0 5.93 0 13.267c0 7.862 5.59 10.81 9.555 17.624C12.09 35.248 11.342 38 13 38c1.723 0 .975-2.817 3.445-7.043C20.085 24.503 26 21.162 26 13.267 26 5.93 20.183 0 13 0Z"/>
+      </svg>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjiv--bLU7E9vByphpViq9E6wIHkLZex0&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_neighborhooddiscovery_v2_cADF" async defer></script>
+    <script src="./assets/google.js"></script>
+                
+            </div>
+            <div class="meal-details">
+                
+                
+            </div>
+          
+                      
+    </main>            
+         
+     <!--Do we want to insert our GitHub repo here in the footer?-->
+    <footer class="footer">
+        <div class="content has-text-centered is-black">
+          <p>
+            Recipe of the Day! by Team 3
+            
+            
+          </p>
+        </div>
+      </footer> 
+    
+           
+
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>    
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+ <!-- <script src="text-processing.js"></script> -->
+  <script src="./assets/tastyscript.js"></script> 
+    
+</body>
+geometry&solution_channel=GMP_QB_neighborhooddiscovery_v2_cADF" async defer></script>
+    <script src="./assets/google.js"></script>
+  </body>
+</html>
