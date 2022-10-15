@@ -10,7 +10,11 @@ var recipeIngredientsEl = document.querySelector(".recipeIngredientsDiv");
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '9c4e2effe4mshdb57e3901e2dbcap1c3d2djsnc2f16284b672',
+
+
+
+        'X-RapidAPI-Key': '6cf937361amsh9b432836823a324p17b612jsn8c93f55895ec',
+
         'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
     }
 };
@@ -65,9 +69,9 @@ function printRecipeDescription() {
     console.log("Description: " + globalTopDescription + " " + globalDescription);
     if (globalDescription || globalTopDescription) {
         //recipeDescriptionEl.innerHTML = "<p>Description</p>" + "<p>" + globalDescription + "</p>";
-        let descriptionHeading = document.createElement("h2");
-        descriptionHeading.textContent = "Description of this recipe:";
-        recipeDescriptionEl.appendChild(descriptionHeading);
+        // let descriptionHeading = document.createElement("h2");
+        // descriptionHeading.textContent = "Description of this recipe:";
+        // recipeDescriptionEl.appendChild(descriptionHeading);
 
         let description = document.createElement("p");
         if (globalDescription) {
@@ -77,7 +81,7 @@ function printRecipeDescription() {
         }
         
         recipeDescriptionEl.appendChild(description);
-    }
+    } else { console.log('no description'); handleNextRecipeButtonEvent();}
 }
 
 function getRecipeInstructions() {
@@ -91,17 +95,23 @@ function getRecipeInstructions() {
 }
 
 function printRecipeInstructions() {
-    document.getElementById('moreInfo').style.display = 'block' 
+
+
+    document.getElementById('moreInfo').style.display = 'block';
+    moreInfoButtonEl.style.display = 'none';
+
     console.log("Instructions");
     let instructionsHeading = document.createElement("h2");
     instructionsHeading.textContent = "Instructions:";
+    instructionsHeading.setAttribute('class', 'is-size-3');
     recipeInstructionsEl.appendChild(instructionsHeading);
 
     for (i=0; i<globalInstructions.length; i++) {
         if (globalInstructions[i]) {
+            var j = i+1;
             console.log(globalInstructions[i]);
             let instruction = document.createElement("p");
-            instruction.textContent = globalInstructions[i];
+            instruction.innerHTML = j + '. ' + globalInstructions[i] + ' <br />';
             recipeInstructionsEl.appendChild(instruction);
         }
     }
@@ -123,13 +133,14 @@ function printRecipeIngredients(ingredients) {
     console.log("Ingredients");
     let ingredientHeading = document.createElement("h2");
     ingredientHeading.textContent = "Ingredients:";
+    ingredientHeading.setAttribute('class', 'is-size-3');
     recipeIngredientsEl.appendChild(ingredientHeading);
 
     for (i=0; i<globalIngredients.length; i++) {
         if (globalIngredients[i]) {
             console.log(globalIngredients[i]);
             let ingredient = document.createElement("p");
-            ingredient.textContent = globalIngredients[i];
+            ingredient.textContent = '- ' + globalIngredients[i];
             recipeIngredientsEl.appendChild(ingredient);
         }
     }
@@ -171,6 +182,8 @@ function handleMoreInfoButtonEvent() {
 }
 
 function handleNextRecipeButtonEvent() {
+    moreInfoButtonEl.style.display = 'inline';
+    document.getElementById('moreInfo').style.display = 'none';
     console.log("In handleNextRecipeButtonEvent");
     clearElements();
     loadRecipe();
