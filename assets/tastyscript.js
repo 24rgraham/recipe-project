@@ -99,7 +99,7 @@ function printRecipeInstructions() {
             var j = i+1;
             console.log(globalInstructions[i]);
             let instruction = document.createElement("p");
-            instruction.textContent = j + '. ' + globalInstructions[i];
+            instruction.innerHTML = j + '. ' + globalInstructions[i] + ' <br /> <br /> ';
             recipeInstructionsEl.appendChild(instruction);
         }
     }
