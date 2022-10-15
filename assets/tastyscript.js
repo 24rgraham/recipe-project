@@ -10,7 +10,7 @@ var recipeIngredientsEl = document.querySelector(".recipeIngredientsDiv");
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'da4c2a888amshc0a3faa09c1e7b5p15d91djsn6bdd906fb36b',
+        'X-RapidAPI-Key': '9c4e2effe4mshdb57e3901e2dbcap1c3d2djsnc2f16284b672',
         'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
     }
 };
@@ -91,7 +91,7 @@ function getRecipeInstructions() {
 }
 
 function printRecipeInstructions() {
-    document.getElementById('moreInfo').style.display = 'block'
+    document.getElementById('moreInfo').style.display = 'block' 
     console.log("Instructions");
     let instructionsHeading = document.createElement("h2");
     instructionsHeading.textContent = "Instructions:";
@@ -177,7 +177,7 @@ function handleNextRecipeButtonEvent() {
 }
 
 function clearElements() {
-    recipeImageDivEl.innerHTML = "";
+    recipeImageDivEl.innerHTML = ""; 
     recipeDescriptionEl.innerHTML = "";
     recipeInstructionsEl.innerHTML = "";
     recipeIngredientsEl.innerHTML = "";
