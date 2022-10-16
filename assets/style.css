@@ -24,3 +24,9 @@
     background-color: lightgrey;
     margin: 5px
 }
+
+.lastRecipe {
+    background-color: lightgrey;
+    margin: 5px;
+    font-weight: bold;
+}

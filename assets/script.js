@@ -1,7 +1,7 @@
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'da4c2a888amshc0a3faa09c1e7b5p15d91djsn6bdd906fb36b',
+        'X-RapidAPI-Key': '6cf937361amsh9b432836823a324p17b612jsn8c93f55895ec',
         'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
     }
 };
@@ -106,7 +106,7 @@ function getRecipeIngredients() {
     return ingredients;
 }
 
-function printRecipeIngredients(ingredients) {
+function printRecipeIngredients() {
     console.log("Ingredients");
     let ingredientHeading = document.createElement("h2");
     ingredientHeading.textContent = "Ingredients:";
@@ -120,6 +120,11 @@ function printRecipeIngredients(ingredients) {
             recipeIngredientsEl.appendChild(ingredient);
         }
     }
+}
+
+function printLastRecipeName() {
+    let lastRecipeName = localStorage.getItem("LastRecipe");
+    lastRecipeEl.textContent = lastRecipeName;
 }
 
 function loadRecipe() {
@@ -140,6 +145,8 @@ function loadRecipe() {
         var image_url = getRecipeImage();
         printRecipeImage(image_url);
 
+        printLastRecipeName();
+
         globalDescription = getRecipeDescription();
         globalIngredients = getRecipeIngredients();
         globalInstructions = getRecipeInstructions();
@@ -153,6 +160,7 @@ function handleMoreInfoButtonEvent() {
     printRecipeInstructions();
 
     printRecipeIngredients();
+    localStorage.setItem("LastRecipe", globalRecipe.name);
 }
 
 function handleNextRecipeButtonEvent() {
@@ -181,6 +189,8 @@ var recipeDescriptionEl = document.querySelector(".recipeDescription");
 var recipeInstructionsEl = document.querySelector(".recipeInstructionsDiv");
 
 var recipeIngredientsEl = document.querySelector(".recipeIngredientsDiv");
+
+var lastRecipeEl = document.querySelector(".lastRecipe");
 
 moreInfoButtonEl.addEventListener('click', handleMoreInfoButtonEvent);
 nextRecipeButtonEl.addEventListener('click', handleNextRecipeButtonEvent);
