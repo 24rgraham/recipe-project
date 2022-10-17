@@ -10,10 +10,11 @@ var pastRecipeDiv = document.querySelector(".pastRecipe");
 const options = {
     method: 'GET',
     headers: {
+        
 
+        'X-RapidAPI-Key': '2027bdb4a5msh1927092e2140ee1p1ccd38jsn9b4c3fa1c4f5',
 
-
-        'X-RapidAPI-Key': '6cf937361amsh9b432836823a324p17b612jsn8c93f55895ec',
+        // 'X-RapidAPI-Key': '6cf937361amsh9b432836823a324p17b612jsn8c93f55895ec',
 
         'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
     }
