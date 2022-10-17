@@ -63,8 +63,6 @@
         // Full list of icons can be found at https://fonts.google.com/icons
         '_default': 'circle',
         'supermarket': 'local_grocery_store',
-        'convenience_store': 'store',
-        'bakery': 'bakery_dining',
       };
 
       /**
@@ -421,49 +419,29 @@
           });
         }
       }
-
-      const CONFIGURATION = {
-        "capabilities": {"search":true,"distances":false,"directions":false,"contacts":true,"atmospheres":false,"thumbnails":true},
-        "pois": [
-          {"placeId": "ChIJA3kY6m8UkFQR-CIE8erfUqs"},
-          {"placeId": "ChIJy5gpCW0UkFQRKpmjS5yE7Xo"},
-          {"placeId": "ChIJG5sk1YUTkFQRiK8mgfpznHI"},
-          {"placeId": "ChIJ14SEx4MTkFQROnBDVuPW4PY"},
-          {"placeId": "ChIJRQO6hYUTkFQRIfTgBMoGCMU"}
-        ],
-        "mapRadius": 2000,
-        "mapOptions": {"center":{"lat":47.6849444,"lng":-122.2982224},"fullscreenControl":true,"mapTypeControl":true,"streetViewControl":false,"zoom":16,"zoomControl":true,"maxZoom":20,"mapId":""},
-        "mapsApiKey": "AIzaSyBjiv--bLU7E9vByphpViq9E6wIHkLZex0"
-      };
-
-      function initMap() {
-        new NeighborhoodDiscovery(CONFIGURATION);
-      }
-
-      
-
       navigator.geolocation.getCurrentPosition(
         (position) => {
           
             var myLat = position.coords.latitude
             var myLng = position.coords.longitude
           
-            const CONFIGURATION = {
-              "capabilities": {"search":true,"distances":false,"directions":false,"contacts":true,"atmospheres":false,"thumbnails":true},
-              "pois": [
-                {"placeId": "ChIJA3kY6m8UkFQR-CIE8erfUqs"},
-                {"placeId": "ChIJy5gpCW0UkFQRKpmjS5yE7Xo"},
-                {"placeId": "ChIJG5sk1YUTkFQRiK8mgfpznHI"},
-                {"placeId": "ChIJ14SEx4MTkFQROnBDVuPW4PY"},
-                {"placeId": "ChIJRQO6hYUTkFQRIfTgBMoGCMU"}
-              ],
-              "mapRadius": 2000,
-              "mapOptions": {"center":{"lat":myLat,"lng":myLng},"fullscreenControl":true,"mapTypeControl":true,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":6,"mapId":""},
-              "mapsApiKey": "AIzaSyBjiv--bLU7E9vByphpViq9E6wIHkLZex0"
-            };
 
-          console.log(CONFIGURATION)
+      const CONFIGURATION = {
+        "capabilities": {"search":true,"distances":false,"directions":false,"contacts":true,"atmospheres":false,"thumbnails":true},
+        "pois": [
+          {"placeId": ""},
+          {"placeId": ""},
+          {"placeId": ""},
+          {"placeId": ""},
+          {"placeId": ""}
+        ],
+        "mapRadius": 2000,
+        "mapOptions": {"center":{"lat":myLat,"lng":myLng},"fullscreenControl":true,"mapTypeControl":true,"streetViewControl":false,"zoom":16,"zoomControl":true,"maxZoom":20,"mapId":"a423db1d59783fad"},
+        "mapsApiKey": "AIzaSyBjiv--bLU7E9vByphpViq9E6wIHkLZex0"
+      };
 
-          new NeighborhoodDiscovery(CONFIGURATION)
-          
-        });
+      console.log(CONFIGURATION)
+
+      new NeighborhoodDiscovery(CONFIGURATION)
+      
+    });
