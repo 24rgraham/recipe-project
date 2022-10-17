@@ -5,7 +5,7 @@ var nextRecipeButtonEl = document.getElementById("nextRecipeButton");
 var recipeDescriptionEl = document.querySelector(".recipeDescription");
 var recipeInstructionsEl = document.querySelector(".recipeInstructionsDiv");
 var recipeIngredientsEl = document.querySelector(".recipeIngredientsDiv");
-
+var pastRecipeDiv = document.querySelector(".pastRecipe");
 
 const options = {
     method: 'GET',
@@ -129,7 +129,7 @@ function getRecipeIngredients() {
     return ingredients;
 }
 
-function printRecipeIngredients(ingredients) {
+function printRecipeIngredients() {
     console.log("Ingredients");
     let ingredientHeading = document.createElement("h2");
     ingredientHeading.textContent = "Ingredients:";
@@ -167,6 +167,7 @@ function loadRecipe() {
         globalDescription = getRecipeDescription();
         printRecipeDescription(globalDescription);
 
+        printPastRecipes();
 
         globalIngredients = getRecipeIngredients();
         globalInstructions = getRecipeInstructions();
@@ -175,6 +176,7 @@ function loadRecipe() {
 
 function handleMoreInfoButtonEvent() {
     console.log("In handleMoreInfoButtonEvent");
+    addRecipeToSessionStorage();
 
     printRecipeInstructions();
 
@@ -189,11 +191,39 @@ function handleNextRecipeButtonEvent() {
     loadRecipe();
 }
 
+function addRecipeToSessionStorage() {
+    var recipeArray = [globalRecipe.name];
+    var sessionStorageArray = JSON.parse(sessionStorage.getItem("pastRecipe"));
+    if (sessionStorageArray) {
+        recipeArray = recipeArray.concat(sessionStorageArray);
+    }
+    sessionStorage.setItem("pastRecipe", JSON.stringify(recipeArray));
+}
+
+function printPastRecipes() {
+    pastRecipeDiv.innerHTML = "";
+    let pastRecipeArr = JSON.parse(sessionStorage.getItem("pastRecipe"));
+
+    if (pastRecipeArr && pastRecipeArr.length > 0) {
+        let pastRecipeHeading = document.createElement("h2");
+        pastRecipeHeading.textContent = "Past searched recipes:";
+        pastRecipeHeading.setAttribute('class', 'is-size-3');
+        pastRecipeDiv.appendChild(pastRecipeHeading);
+
+        for (i=0; i<pastRecipeArr.length; i++) {
+            let pastRecipe = document.createElement("p");
+            pastRecipe.textContent = '- ' + pastRecipeArr[i];
+            pastRecipeDiv.appendChild(pastRecipe);
+        }
+    }
+}
+
 function clearElements() {
     recipeImageDivEl.innerHTML = ""; 
     recipeDescriptionEl.innerHTML = "";
     recipeInstructionsEl.innerHTML = "";
     recipeIngredientsEl.innerHTML = "";
+    pastRecipeDiv.innerHTML = "";
 }
 
 

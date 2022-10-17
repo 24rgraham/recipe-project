@@ -131,6 +131,17 @@ p{
 
 }
 
+.pastRecipe h2{
+    text-align: left;
+    font-size: 1.75rem;
+    font-weight: bolder;
+}
+
+.pastRecipe p{
+    font-size: 1.5rem;
+    padding-left: 60px;
+}
+
 .nutrition-box{
     color: black;
     font-size: 1rem;
