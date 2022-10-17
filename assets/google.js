@@ -419,6 +419,12 @@
           });
         }
       }
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          
+            var myLat = position.coords.latitude
+            var myLng = position.coords.longitude
+          
 
       const CONFIGURATION = {
         "capabilities": {"search":true,"distances":false,"directions":false,"contacts":true,"atmospheres":false,"thumbnails":true},
@@ -430,10 +436,12 @@
           {"placeId": ""}
         ],
         "mapRadius": 2000,
-        "mapOptions": {"center":{"lat":47.6849444,"lng":-122.2982224},"fullscreenControl":true,"mapTypeControl":true,"streetViewControl":false,"zoom":16,"zoomControl":true,"maxZoom":20,"mapId":"a423db1d59783fad"},
+        "mapOptions": {"center":{"lat":myLat,"lng":myLng},"fullscreenControl":true,"mapTypeControl":true,"streetViewControl":false,"zoom":16,"zoomControl":true,"maxZoom":20,"mapId":"a423db1d59783fad"},
         "mapsApiKey": "AIzaSyBjiv--bLU7E9vByphpViq9E6wIHkLZex0"
       };
 
-      function initMap() {
-        new NeighborhoodDiscovery(CONFIGURATION);
-      }
+      console.log(CONFIGURATION)
+
+      new NeighborhoodDiscovery(CONFIGURATION)
+      
+    });
